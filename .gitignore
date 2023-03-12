@@ -1,3 +1,5 @@
 .env
 statuc/node_modules/
 venv/
+__pycache__/
+.vscode/
