@@ -5,10 +5,11 @@ the tokens with the users data and generate new document. THe user will br prese
 to the document so they can view it in thier browser or download it.
 
 
-This is a python 3 flask app.
+This is a python 3 flask app anf uses the following...
     Python 3.11.1
     Flask 2.2.3
     Werkzeug 2.2.3
+    https://app.pdf.co PDF API
 
 Change directory into the top level folder...
  'cd dynamic-document-generation'
