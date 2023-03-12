@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+        <div class="row">
+
+            <div class="col-2">
+                <h2 class="category_header">Categories</h2>
+                <ul class="category_container">
+                    <li class="category_item">Spotlight</li>
+                </ul>
+            </div>
+            <div class="col-10">
+                <h3 class="template_preview_header">{{ pdf_templates.name }}</h3>
+
+            {% for my_template in pdf_templates %}
+                <div class="template_preview_container">
+                    <p class="template_name">{{ my_template.name }}</p>
+                    <img class="template_preview" src="static/pdf_previews/{{ my_template.preview }}" alt="">
+                    <a type="button" href="template/{{ my_template.name }}" class="template_button btn btn-secondary btn-sm" id="{{ my_template.name }}">
+                        <i class="bi bi-arrow-right-square-fill"></i>
+                    </a>
+                </div>
+            {% endfor %}
+
+            </div>
+        </div>
+{% endblock %}

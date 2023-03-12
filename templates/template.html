@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+       <div class="row">
+           <div class="col-12">
+               <div>
+                   <p class="template_preview_large_name">Selected template: {{ pdf_template.name }}</p>
+                   <p>
+                       Please enter values in the form below. Entered values will then be placed into the template.
+                   </p>
+                </div>
+           </div>
+            <div class="col-6">
+
+                <form action="/template_form_processor" method="POST" class="template_form">
+
+                    <input type="hidden" name="template" value="{{ pdf_template.name }}">
+
+                    {% for my_field in pdf_template.fields %}
+                    <div class="mb-3">
+                            <label class="form-label" for="{{ my_field }}"></label>
+                            <input class="form-control" name="{{ my_field }}" id="{{ my_field }}" value="" placeholder="Enter a {{ my_field }}" />
+                    </div>
+                    {% endfor %}
+
+                <hr />
+                <div class="mb-3">
+                    <input class="btn btn-primary float-end" type="submit" name="Submit" id="template-submit-button">
+                    <button class="btn btn-primary float-end" type="reset">Reset</button>
+                </div>
+                </form>
+
+            </div>
+            <div class="col-6">
+
+
+                <div class="template_preview_large_container">
+                    {% for my_preview in pdf_template.previews %}
+                        <img class="template_preview_large" src="../static/pdf_previews/{{ my_preview }}">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+{% endblock %}
