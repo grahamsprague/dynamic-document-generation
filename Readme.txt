@@ -6,8 +6,9 @@ to the document so they can view it in thier browser or download it.
 
 
 This is a python 3 flask app.
-
-You will need python 3 installed to use it.
+    Python 3.11.1
+    Flask 2.2.3
+    Werkzeug 2.2.3
 
 Change directory into the top level folder...
  'cd dynamic-document-generation'
